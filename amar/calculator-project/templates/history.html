@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Calculator History</h1>
+    <div class="history-content white-box">
+        {% if historical_data %}
+            {% for item in historical_data %}
+                <p>{{ item }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No history available.</p>
+        {% endif %}
+    </div>
+    <div class="navigation-buttons">
+        <a href="{{ url_for('index') }}" class="button">Back to Calculator</a>
+    </div>
+</body>
+</html>

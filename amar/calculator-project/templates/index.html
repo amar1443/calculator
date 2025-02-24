@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1 class="text-center text-white">CALCULATOR</h1>
+    <div class="calculator mx-auto">
+        <form action="{{ url_for('calculate') }}" method="post">
+            <input type="text" id="display" name="expression" class="form-control display mb-3">
+            <div class="buttons">
+                <button type="button" class="btn btn-dark button" data-value="C" onclick="clearDisplay()">C</button>
+                <button type="button" class="btn btn-dark button" data-value="(" onclick="appendToDisplay('(')">(</button>
+                <button type="button" class="btn btn-dark button" data-value=")" onclick="appendToDisplay(')')">)</button>
+                <button type="button" class="btn btn-dark button" data-value="/" onclick="appendToDisplay('/')">/</button>
+                <button type="button" class="btn btn-dark button" data-value="7" onclick="appendToDisplay('7')">7</button>
+                <button type="button" class="btn btn-dark button" data-value="8" onclick="appendToDisplay('8')">8</button>
+                <button type="button" class="btn btn-dark button" data-value="9" onclick="appendToDisplay('9')">9</button>
+                <button type="button" class="btn btn-dark button" data-value="*" onclick="appendToDisplay('*')">*</button>
+                <button type="button" class="btn btn-dark button" data-value="4" onclick="appendToDisplay('4')">4</button>
+                <button type="button" class="btn btn-dark button" data-value="5" onclick="appendToDisplay('5')">5</button>
+                <button type="button" class="btn btn-dark button" data-value="6" onclick="appendToDisplay('6')">6</button>
+                <button type="button" class="btn btn-dark button" data-value="-" onclick="appendToDisplay('-')">-</button>
+                <button type="button" class="btn btn-dark button" data-value="1" onclick="appendToDisplay('1')">1</button>
+                <button type="button" class="btn btn-dark button" data-value="2" onclick="appendToDisplay('2')">2</button>
+                <button type="button" class="btn btn-dark button" data-value="3" onclick="appendToDisplay('3')">3</button>
+                <button type="button" class="btn btn-dark button" data-value="+" onclick="appendToDisplay('+')">+</button>
+                <button type="button" class="btn btn-dark button" data-value="0" onclick="appendToDisplay('0')">0</button>
+                <button type="button" class="btn btn-dark button" data-value="." onclick="appendToDisplay('.')">.</button>
+                <button type="submit" class="btn btn-dark button" data-value="=">=</button>
+                <button type="button" class="btn btn-dark button" data-value="^" onclick="appendToDisplay('^')">^</button>
+                <button type="button" class="btn btn-dark button" data-value="sin(" onclick="appendToDisplay('sin(')">sin</button>
+                <button type="button" class="btn btn-dark button" data-value="cos(" onclick="appendToDisplay('cos(')">cos</button>
+                <button type="button" class="btn btn-dark button" data-value="tan(" onclick="appendToDisplay('tan(')">tan</button>
+                <button type="button" class="btn btn-dark button" data-value="log(" onclick="appendToDisplay('log(')">log</button>
+                <button type="button" class="btn btn-dark button" data-value="sqrt(" onclick="appendToDisplay('sqrt(')">√</button>
+                <button type="button" class="btn btn-dark button" data-value="pi" onclick="appendToDisplay('pi')">π</button>
+                <button type="button" class="btn btn-dark button" data-value="e" onclick="appendToDisplay('e')">e</button>
+            </div>
+        </form>
+    </div>
+    <div class="white-box">
+        <div class="bottom-title text-center mt-3">
+            <span>CREATED BY AMARENDRA</span>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <a href="{{ url_for('history') }}" class="btn btn-primary">
+            History of Calculator
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+            </svg>
+        </a>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

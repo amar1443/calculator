@@ -1,0 +1,123 @@
+@keyframes flash {
+    0% { background-color: #ff0000; }
+    50% { background-color: #ff0000; }
+    100% { background-color: #ff0000; }
+}
+
+@keyframes moveBanner {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+}
+
+@keyframes moveHorizontal {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes moveDown {
+    0% { top: 0; }
+    100% { top: 90%; }
+}
+
+@keyframes blink {
+    0% { border-right-color: white; }
+    50% { border-right-color: transparent; }
+    100% { border-right-color: white; }
+}
+
+body {
+    background-image: url('../images/background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.calculator {
+    background-color: rgb(0, 255, 242); /* Semi-transparent background */
+    border: 5px solid #000000;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px #000000;
+    width: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.display {
+    background-color: #222;
+    color: #ffffff;
+    font-size: 2.5em;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: right;
+    margin-bottom: 20px; /* Increased margin */
+    flex: 1; /* Adjusted flex value */
+    border-right: 2px solid white; /* Add a right border to simulate the cursor */
+    animation: blink 1s step-end infinite; /* Apply the blinking animation */
+    width: 100%; /* Ensure the display takes full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    height: 60px; /* Set a fixed height for the display */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    flex: 2;
+}
+
+.button {
+    background-color: #000000;
+    border: 3px solid #00ff00; /* Changed border color to green neon */
+    border-radius: 15px; /* Added border radius for light curves */
+    padding: 10px; /* Adjusted padding */
+    font-size: 1.2em; /* Adjusted font size */
+    font-weight: bold; /* Make the text bold */
+    color: #fff; /* Change text color to white for better visibility */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 100%; /* Ensure buttons take full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-shadow: 0 0 10px #00ff00; /* Added neon glow effect */
+}
+
+.button:hover {
+    background-color: #333333; /* Changed hover color for better visibility */
+    box-shadow: 0 0 20px #00ff00; /* Increased neon glow on hover */
+}
+
+.button:active {
+    animation: flash 0.5s; /* Apply flash animation on click */
+}
+
+h1 {
+    color: #000; /* Set the color to black */
+    text-align: center; /* Center the title */
+    margin: 20px 0; /* Adjusted margin to add space at the top and bottom */
+    font-size: 2.5em;
+    width: 100%;
+    text-decoration: underline; /* Added underline */
+    background-color: rgb(225, 255, 0); /* Set background color to green */
+}
+
+.bottom-title {
+    
+    color: #0015ff; /* Set the color to white */
+    text-align: center;
+    margin-top: 20px; /* Add margin to create space above the title */
+    font-size: 2em;
+    width: 100%;
+    text-decoration: underline; /* Added underline */
+    padding: 10px 0; /* Add padding for better spacing */
+}
+
