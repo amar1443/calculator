@@ -13,3 +13,5 @@ Project Structure:
 Features:
    1.calculating numbers
    2.arthmetic operations
+
+   This project was given as an assignment by Sir Guranna Gouda and developed under his guidance.
